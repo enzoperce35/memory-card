@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-import { useState } from "react";
+import { useState, useEffect } from "react"
 
 export default function Card({card, select}) {
   const [cardImage, setCardImage] = useState(null)
