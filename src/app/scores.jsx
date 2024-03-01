@@ -23,9 +23,19 @@ export default function Scores({cards}) {
   if (score.current > score.high) setNewHighScore();
 
   return (
-    <div>
-      <h4>{`High Score: ${score.high}`}</h4>
-      <h4>{`Your Score: ${score.current}`}</h4>
+    <div id="scores">
+      <div>
+        <h4>
+          <em className="score-titles">High Score : </em>
+          <em className="score-values">{score.high}</em>
+        </h4>
+
+        <h4>
+          <em className="score-titles">Your Score : </em>
+          <em className="score-values">{score.current}</em>
+        </h4>
+      </div>
+
     </div>
   )
 }

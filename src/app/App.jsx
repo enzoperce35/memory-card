@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as YGO from "./card_helper";
 import Scores from "./scores";
 import Cards from './cards/cards'
-import '../App.css'
+import '../style/App.css'
 
 export default function App() {
   const [cards, setCards] = useState(YGO.getAll())
@@ -14,10 +14,18 @@ export default function App() {
   return (
     <div id="container">
       <div id="header">
-        <Scores cards={cards}/>
+        <div>
+          <h3 id="head-name">
+            <em>Yu-Gi-Oh!</em>
+            Memory Game
+          </h3>
+
+          <Scores cards={cards}/>
+        </div>
+
       </div>
 
-      <div id="body">
+      <div id="content">
         <Cards cards={cards} select={handleSelectedCard}/>
       </div>
     </div>

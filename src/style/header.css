@@ -1,0 +1,86 @@
+#header {
+  align-self: center;
+}
+
+#header div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4vw;
+}
+
+#head-name em {
+  font-size: 5em;
+  text-shadow: 10px 2px 5px grey;
+  color: brown;
+}
+
+#scores div {
+  align-self: center;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+#scores div > * {
+  margin: unset;
+  padding-top: 10px;
+}
+
+.score-titles {
+  color: forestgreen;
+}
+
+.score-values {
+  color: darkred;
+  font-size: x-large;
+}
+
+@media screen and (max-width: 1000px) {
+  #head-name em {
+    font-size: 4rem;
+    text-shadow: 10px 2px 5px grey;
+  }
+
+  #scores div {
+    align-self: center;
+    font-size: small;
+    font-weight: bold;
+    margin-bottom: 13vh;
+  }
+
+  .score-values {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #header div {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  #head-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: unset;
+  }
+
+  #head-name em {
+    font-size: 3rem;
+    text-shadow: 10px 2px 5px grey;
+  }
+
+  #scores div {
+    font-size: x-small;
+    font-weight: bold;
+    margin: unset;
+  }
+
+  .score-values {
+    font-size: x-small;
+  }
+}

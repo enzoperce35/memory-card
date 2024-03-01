@@ -1,0 +1,19 @@
+@import '/src/style/header.css';
+@import '/src/style/content.css';
+
+body {
+  background-color: antiquewhite;
+}
+
+#container {
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 25vh auto;
+  padding: 0 5vw 5vh 0;
+}
+
+@media screen and (min-width: 1300px)  and (max-width: 1600px){
+  #container {
+    grid-template-rows: 15vh auto;
+  }
+}

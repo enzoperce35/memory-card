@@ -13,11 +13,14 @@ export default function Card({card, select}) {
 
 
   return (
-    <a onClick={(e) => {
-      e.preventDefault()
-      select(card)
-    }}>
-      <img src={cardImage} />
-    </a>
+    <div>
+      <span onClick={() => { select(card) }}>
+        <img src={cardImage} />
+      </span>
+
+      <p className="card-name">
+        {card.name.replaceAll('_', ' ')}
+      </p>
+    </div>
   )
 }
