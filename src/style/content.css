@@ -10,7 +10,7 @@
   grid-template-columns: repeat(auto-fill, minmax(80px, 110px));
   gap: 4vw;
   justify-content: center;
-  padding: 0 4vw;
+  padding: 0 4vw 3vw;
 }
 
 li {

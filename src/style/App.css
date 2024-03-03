@@ -1,14 +1,15 @@
 @import '/src/style/header.css';
 @import '/src/style/content.css';
+@import '/src/style/footer.css';
 
 body {
-  background-color: antiquewhite;
+  background-image: linear-gradient(to bottom right, antiquewhite, rgb(202, 166, 68));
 }
 
 #container {
   height: fit-content;
   display: grid;
-  grid-template-rows: 25vh auto;
+  grid-template-rows: 25vh auto 10vh;
   padding: 0 5vw 5vh 0;
 }
 

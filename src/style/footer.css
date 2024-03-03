@@ -1,0 +1,17 @@
+#footer {
+  margin: auto;
+  font-size: larger;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#footer a {
+  color: darkolivegreen;
+}
+
+@media screen and (max-width: 650px) {
+  #footer {
+    font-size: x-small;
+    overflow-wrap: normal;
+  }
+}

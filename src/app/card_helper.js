@@ -29,7 +29,7 @@ const YuGiOhCards = [
   'Exodia_the_Forbidden_One',
   'Gemini_Elf',
   'Vampire_Grace',
-].map(card => card = {name: card, selected: false} )
+]
 
 function shuffle(cards) {
   for(let i = cards.length-1; i > 0; i--) {
@@ -55,6 +55,14 @@ function modify(cards, selected) {
   return mod
 }
 
+function reset(cards) {
+  const mod = cards.map((card) => {
+    return {...card, selected: false}
+  })
+
+  return mod
+}
+
 function getSelected(cards) {
   let selectedCards = [];
 
@@ -75,5 +83,6 @@ export {
   getAll,
   getSelected,
   modify,
+  reset,
   shuffle,
 }

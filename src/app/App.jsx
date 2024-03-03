@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as YGO from "./card_helper";
-import Scores from "./scores";
 import Cards from './cards/cards'
+import Scores from "./scores";
 import '../style/App.css'
 
 export default function App() {
-  const [cards, setCards] = useState(YGO.getAll())
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    const YGOcards = YGO.getAll().map(card => card = {
+      name: card,
+      selected: false,
+      image: <img src={`https://static-7.studiobebop.net/ygo_data/card_images/${card}.jpg`} />
+    })
+
+    setCards(YGOcards)
+
+    return (() => {
+      setCards([])
+    })
+  }, [])
 
   const handleSelectedCard = (card) => {
-    setCards(card.selected ? YGO.getAll() : YGO.modify(cards, card))
+    setCards(card.selected ? YGO.reset(cards) : YGO.modify(cards, card))
   }
 
   return (
@@ -27,6 +41,16 @@ export default function App() {
 
       <div id="content">
         <Cards cards={cards} select={handleSelectedCard}/>
+      </div>
+
+      <div id="footer">
+        <p>
+          Card images and details were fetched from &nbsp;
+
+          <a href="http://yugiohprices.com" target="_blank" >
+            yugiohprices.com
+          </ a>
+        </p>
       </div>
     </div>
   )
