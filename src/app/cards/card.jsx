@@ -5,7 +5,7 @@ export default function Card({card}) {
         {card.image}
       </span>
 
-      <p className="card-name">
+      <p className='card-name'>
         {card.name.replaceAll('_', ' ')}
       </p>
     </div>

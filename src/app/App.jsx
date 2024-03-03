@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import * as YGO from "./card_helper";
+import { useState, useEffect } from 'react';
+import * as YGO from './card_helper';
 import Cards from './cards/cards'
-import Scores from "./scores";
+import Scores from './scores';
 import '../style/App.css'
 
 export default function App() {
@@ -26,10 +26,10 @@ export default function App() {
   }
 
   return (
-    <div id="container">
-      <div id="header">
+    <div id='container'>
+      <div id='header'>
         <div>
-          <h3 id="head-name">
+          <h3 id='head-name'>
             <em>Yu-Gi-Oh!</em>
             Memory Game
           </h3>
@@ -39,15 +39,15 @@ export default function App() {
 
       </div>
 
-      <div id="content">
+      <div id='content'>
         <Cards cards={cards} select={handleSelectedCard}/>
       </div>
 
-      <div id="footer">
+      <div id='footer'>
         <p>
           Card images and details were fetched from &nbsp;
 
-          <a href="http://yugiohprices.com" target="_blank" >
+          <a href='http://yugiohprices.com' target='_blank' >
             yugiohprices.com
           </ a>
         </p>
