@@ -1,57 +1,57 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as YGO from './card_helper';
-import Cards from './cards/cards'
+import Cards from './cards/cards';
 import Scores from './scores';
-import '../style/App.css'
+import '../style/App.css';
 
 export default function App() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const YGOcards = YGO.getAll().map(card => card = {
+    const YGOcards = YGO.getAll().map((card) => ({
       name: card,
       selected: false,
-      image: <img src={`https://static-7.studiobebop.net/ygo_data/card_images/${card}.jpg`} />
-    })
+      image: <img src={`https://static-7.studiobebop.net/ygo_data/card_images/${card}.jpg`} alt={card} />,
+    }));
 
-    setCards(YGOcards)
+    setCards(YGOcards);
 
     return (() => {
-      setCards([])
-    })
-  }, [])
+      setCards([]);
+    });
+  }, []);
 
   const handleSelectedCard = (card) => {
-    setCards(card.selected ? YGO.reset(cards) : YGO.modify(cards, card))
-  }
+    setCards(card.selected ? YGO.reset(cards) : YGO.modify(cards, card));
+  };
 
   return (
-    <div id='container'>
-      <div id='header'>
+    <div id="container">
+      <div id="header">
         <div>
-          <h3 id='head-name'>
+          <h3 id="head-name">
             <em>Yu-Gi-Oh!</em>
             Memory Game
           </h3>
 
-          <Scores cards={cards}/>
+          <Scores cards={cards} />
         </div>
 
       </div>
 
-      <div id='content'>
-        <Cards cards={cards} select={handleSelectedCard}/>
+      <div id="content">
+        <Cards cards={cards} select={handleSelectedCard} />
       </div>
 
-      <div id='footer'>
+      <div id="footer">
         <p>
           Card images and details were fetched from &nbsp;
 
-          <a href='http://yugiohprices.com' target='_blank' >
+          <a href="http://yugiohprices.com" target="_blank">
             yugiohprices.com
-          </ a>
+          </a>
         </p>
       </div>
     </div>
-  )
+  );
 }
